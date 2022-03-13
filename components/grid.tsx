@@ -1,4 +1,3 @@
-
 import { INDEX } from '../typings'
 import Block from './block'
 import styles from './grid.module.css'

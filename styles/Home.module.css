@@ -1,23 +1,21 @@
 .content {
-  max-width: 500px;
+  max-width: var(--max-width);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* flex: 1; */
-  border: 1px solid red;
+  align-items: center;
 }
 
 .content>h1 {
   color: var(--white);
-  margin-top: 0;
 }
 
 .card {
   background-color: var(--white);
   padding: 15px;
   border-radius: 15px;
-  max-height: fit-content;
   display: flex;
-  /* flex: 1; */
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

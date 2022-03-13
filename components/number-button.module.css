@@ -4,9 +4,6 @@
   font-size: 16px;
   font-weight: bold;
   background-color: var(--black);
-  height: 40px;
-  min-height: 40px;
-  width: 100%;
   padding: 0;
   margin: 4px 2px;
   border: 2px solid var(--black);
@@ -16,6 +13,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: min(9vw, calc(0.09 * var(--max-width)));
+  width: min(9vw, calc(0.09 * var(--max-width)));
 }
 
 .button:focus {
