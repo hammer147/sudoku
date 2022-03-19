@@ -1,4 +1,6 @@
-import { useCallback } from 'react'
+import { useCallback, useContext } from 'react'
+import { AppContext } from '../global-state/app-context'
+import { fillBlock } from '../global-state/sudoku'
 import { NUMBER } from '../typings'
 import styles from './number-button.module.css'
 
@@ -8,11 +10,12 @@ type Props = {
 
 const NumberButton = ({ value }: Props) => {
 
-  // TODO
+  const { state: { sudoku: { selectedBlock, workingGrid } }, dispatch } = useContext(AppContext)
+  const selectedValue = workingGrid && selectedBlock ? workingGrid[selectedBlock[0]][selectedBlock[1]] : 0
 
-  const fill = useCallback((number: NUMBER): void => {
-    // TODO
-  }, [])
+  const fill = useCallback((n: NUMBER): void => {
+    if (selectedBlock && selectedValue === 0) dispatch(fillBlock(n, selectedBlock))
+  }, [dispatch, selectedBlock, selectedValue])
 
   return (
     <button

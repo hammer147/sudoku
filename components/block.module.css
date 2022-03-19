@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   font-size: 20px;
-  font-weight: 'bold';
+  font-weight: bold;
   transition: var(--transition);
   user-select: none;
   height: min(10vw, calc(0.10 * var(--max-width)));
