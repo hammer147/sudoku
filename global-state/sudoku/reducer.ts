@@ -49,6 +49,9 @@ export const sudokuReducer = (state: SudokuState, action: SudokuAction): SudokuS
         }
       }
       return state
+    
+    case ActionType.setSudokuState:
+      return action.payload
 
     default:
       return state

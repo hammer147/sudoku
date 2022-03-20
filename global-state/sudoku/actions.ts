@@ -1,5 +1,6 @@
 import { ActionType } from './action-types'
 import { BLOCK_COORDS, NUMBER } from '../../typings'
+import { SudokuState } from './reducer'
 
 // typing actions
 
@@ -20,12 +21,18 @@ type FillBlockAction = {
   }
 }
 
+type SetSudokuStateAction = {
+  type: ActionType.setSudokuState
+  payload: SudokuState
+}
+
 // discriminated union (type guard via switch in reducer)
 
 export type SudokuAction = 
   | CreateGridAction
   | SelectBlockAction
   | FillBlockAction
+  | SetSudokuStateAction
 
 // action creators
 
@@ -44,4 +51,9 @@ export const fillBlock = (value: NUMBER, coords: BLOCK_COORDS): FillBlockAction 
     value,
     coords
   }
+})
+
+export const setSudokuState = (sudokuState: SudokuState): SetSudokuStateAction => ({
+  type: ActionType.setSudokuState,
+  payload: sudokuState
 })
