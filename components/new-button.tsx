@@ -1,6 +1,6 @@
 import { useCallback, useContext } from 'react'
-import { AppContext } from '../global-state/app-context'
-import { createGrid } from '../global-state/sudoku'
+import { AppContext } from '../context/app-context'
+import { createGrid } from '../context/sudoku'
 import styles from './new-button.module.css'
 
 const NewButton = () => {

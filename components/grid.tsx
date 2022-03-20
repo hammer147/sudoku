@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect } from 'react'
-import { AppContext } from '../global-state/app-context'
-import { createGrid, fillBlock, selectBlock } from '../global-state/sudoku'
+import { AppContext } from '../context/app-context'
+import { createGrid, fillBlock, selectBlock } from '../context/sudoku'
 import { INDEX, NUMBER } from '../typings'
 import Block from './block'
 import styles from './grid.module.css'

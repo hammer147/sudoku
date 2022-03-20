@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { AppContext } from '../global-state/app-context'
-import { selectBlock } from '../global-state/sudoku'
+import { AppContext } from '../context/app-context'
+import { selectBlock } from '../context/sudoku'
 import { INDEX } from '../typings'
 import styles from './block.module.css'
 

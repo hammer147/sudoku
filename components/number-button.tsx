@@ -1,6 +1,6 @@
 import { useCallback, useContext } from 'react'
-import { AppContext } from '../global-state/app-context'
-import { fillBlock } from '../global-state/sudoku'
+import { AppContext } from '../context/app-context'
+import { fillBlock } from '../context/sudoku'
 import { NUMBER } from '../typings'
 import styles from './number-button.module.css'
 
