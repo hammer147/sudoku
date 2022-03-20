@@ -16,46 +16,40 @@ const Grid = () => {
   }, [dispatch, solvedGrid])
 
 
-  // debugging
-  useEffect(() => {
-    console.log(selectedBlock)
-  }, [selectedBlock])
-  
-
-
-
-
   // functions that dispatch an action
 
   const fill = useCallback((n: NUMBER): void => {
     if (selectedBlock && selectedValue === 0) dispatch(fillBlock(n, selectedBlock))
   }, [dispatch, selectedBlock, selectedValue])
 
-  const moveUp = () => {
+  const moveUp = useCallback(() => {
     if (selectedBlock && selectedBlock[0] > 0) {
       dispatch(selectBlock([selectedBlock[0] - 1 as INDEX, selectedBlock[1]]))
     }
-  }
-  const moveDown = () => {
+  }, [dispatch, selectedBlock])
+
+  const moveDown = useCallback(() => {
     if (selectedBlock && selectedBlock[0] < 8) {
       dispatch(selectBlock([selectedBlock[0] + 1 as INDEX, selectedBlock[1]]))
     }
-  }
-  const moveLeft = () => {
+  }, [dispatch, selectedBlock])
+
+  const moveLeft = useCallback(() => {
     if (selectedBlock && selectedBlock[1] > 0) {
       dispatch(selectBlock([selectedBlock[0], selectedBlock[1] - 1 as INDEX]))
     }
-  }
-  const moveRight = () => {
+  }, [dispatch, selectedBlock])
+
+  const moveRight = useCallback(() => {
     if (selectedBlock && selectedBlock[1] < 8) {
       dispatch(selectBlock([selectedBlock[0], selectedBlock[1] + 1 as INDEX]))
     }
-  }
+  }, [dispatch, selectedBlock])
 
 
   // key input
 
-  const handleKeyInput = useCallback((key: string) => {
+  const handleKeyDown = useCallback(({ key }: KeyboardEvent) => {
     switch (key) {
       case '1': return fill(1)
       case '2': return fill(2)
@@ -72,14 +66,12 @@ const Grid = () => {
       case 'ArrowRight': return moveRight()
       default: return
     }
-  }, [])
+  }, [fill, moveUp, moveDown, moveLeft, moveRight])
 
   useEffect(() => {
-    const handleKeyDown = ({ key }: KeyboardEvent) => handleKeyInput(key)
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [handleKeyInput])
-
+  }, [handleKeyDown])
 
 
   return (
