@@ -1,5 +1,5 @@
 .container {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: white;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -13,7 +13,7 @@
 }
 
 .container.active {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--active-background-color);
 }
 
 .container.puzzle {
@@ -22,5 +22,5 @@
 }
 
 .container:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--hover-background-color);
 }

@@ -1,9 +1,11 @@
 :root {
-  --background: radial-gradient(#0D1317cc, #0D1317);
+  --background: radial-gradient(#858CEA, #6564DB);
   --button-background-color: #101D42;
   --button-color: #fff;
   --border-color: #101D42;
   --puzzle-color: #858CEA;
+  --active-background-color: #D0EDF1;
+  --hover-background-color: #D0EDF1;
   --transition: 0.3s;
   --max-width: 500px;
   background-image: var(--background);
