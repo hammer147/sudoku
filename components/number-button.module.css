@@ -1,12 +1,12 @@
 .button {
-  color: var(--white);
+  color: var(--button-color);
   opacity: 0.9;
   font-size: 16px;
   font-weight: bold;
-  background-color: var(--black);
+  background-color: var(--button-background-color);
   padding: 0;
   margin: 4px 2px;
-  border: 2px solid var(--black);
+  border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: var(--transition);
@@ -15,11 +15,6 @@
   align-items: center;
   height: min(9vw, calc(0.09 * var(--max-width)));
   width: min(9vw, calc(0.09 * var(--max-width)));
-}
-
-.button:focus {
-  border-color: var(--blue);
-  outline: none;
 }
 
 .button:hover {
